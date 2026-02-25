@@ -33,30 +33,20 @@ export const RelogioAnalogico = () => {
     return () => clearInterval(intervalo);
   }, []);
 
-  const formattedTime = useMemo<string>(() => {
-    if (!montado) return "";
-    const horas = e24Horas
-      ? horario.getHours().toString().padStart(2, "0")
-      : (horario.getHours() % 12 || 12).toString().padStart(2, "0");
-    const minutos = horario.getMinutes().toString().padStart(2, "0");
-    const segundos = horario.getSeconds().toString().padStart(2, "0");
-
-    return `${horas}:${minutos}:${segundos}`; // ← SEM chaves, template string direto
-  }, [horario, e24Horas, montado]); // ← array de dependências dentro do useMemo
 
   return (
-    <Card>
-      <div className="relogio-face">
+    <Card className="bg-[#686868] border-black p-2 w-full h-full">
+      <div className=" flex-col size-20 items-center justify-center items-center bg-white h-full w-full rounded-full">
         <div
-          className="ponteiro-horas"
+          className="bg-white border-black p-0.5 rounded-r-full z-10"
           style={{ transform: `rotate(${anguloHoras}deg)` }}
         />
         <div
-          className="ponteiro-minutos"
+          className="bg-black p-0.5 rounded-r-full z-20"
           style={{ transform: `rotate(${anguloMinutos}deg)` }}
         />
         <div
-          className="ponteiro-segundos"
+          className="bg-red-600 p-0.5 rounded-r-full z-30 "
           style={{ transform: `rotate(${anguloSegundos}deg)` }}
         />
       </div>
