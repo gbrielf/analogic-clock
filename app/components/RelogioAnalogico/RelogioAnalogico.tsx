@@ -36,17 +36,17 @@ export const RelogioAnalogico = () => {
 
   return (
     <Card className="bg-[#686868] border-black p-2 w-full h-full">
-      <div className=" flex-col size-20 items-center justify-center items-center bg-white h-full w-full rounded-full">
+      <div className=" flex-col size-20 relative  bg-white h-full w-full rounded-full">
         <div
-          className="bg-white border-black p-0.5 rounded-r-full z-10"
+          className="bg-[#dcdbdb] absolute top-1/2 left-1/2 w-28  origin-bottom -translate-1/2 border-black p-0.5 rounded-r-full z-10"
           style={{ transform: `rotate(${anguloHoras}deg)` }}
         />
         <div
-          className="bg-black p-0.5 rounded-r-full z-20"
+          className="bg-black absolute top-1/2 left-1/2 w-38  origin-bottom -translate-1/2 p-0.5 rounded-r-full z-20"
           style={{ transform: `rotate(${anguloMinutos}deg)` }}
         />
         <div
-          className="bg-red-600 p-0.5 rounded-r-full z-30 "
+          className="bg-red-600 absolute top-1/2 left-1/2 w-38  origin-bottom -translate-1/2 p-0.5 rounded-r-full z-30 "
           style={{ transform: `rotate(${anguloSegundos}deg)` }}
         />
       </div>
